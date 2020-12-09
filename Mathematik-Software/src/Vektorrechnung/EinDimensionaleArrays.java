@@ -1,18 +1,28 @@
 package Vektorrechnung;
 
+import java.io.IOException;
+
+import oop.IO;
+
 public class EinDimensionaleArrays {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	public static void main(String[] args) throws IOException {
+		Multiplikation();
 
-	}
+
 
 	
-	public static double[] Multiplikation() {
-		
-		
-		
-		return 0;
+	}
+
+	private static void Multiplikation() throws IOException {
+		System.out.println("nenne sie die steigung ");
+		int st = IO.readInteger();
+		System.out.println("nenne sie den Anfangswert");
+		double anf = IO.readDouble();
+		System.out.println("Wie oft soll es wiederholt werdern");
+
+		double arr[] = new double
+	
 		
 	}
 }

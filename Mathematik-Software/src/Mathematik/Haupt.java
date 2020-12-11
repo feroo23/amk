@@ -33,15 +33,18 @@ public class Haupt {
 			Matrizenrechnung();
 		}
 		else if (eingabe.equalsIgnoreCase("B")) {
-			System.out.println("Das Programm wird beendet!");
-			System.out.println("");
+			System.out.println("Sind sie sich sicher?");
+			
+		
 		}
 
-
-
-
 	}
+	
 
+	private static void Benden() {
+		
+	}
+	
 	private static void StatistischeAuswertungen() throws IOException {
 
 
@@ -105,7 +108,13 @@ public class Haupt {
 	}
 
 	private static void Vektorrechnung() {
-
+		System.out.println(" ");
+		System.out.println(" =================================================");
+		System.out.println("||						 ||");
+		System.out.println("||Vektorrechnung:			||");
+		System.out.println("||Multiplikation mit einer Zahl 	||");
+		System.out.println("||Addition zweier Vektoren	 ||");
+		System.out.println("||Multiplikation zweier Vektoren 	||");
 	}
 
 	private static void Matrizenrechnung() {

@@ -7,40 +7,108 @@ import oop.IO;
 public class Haupt {
 
 	public static void main(String[] args) throws IOException {
-		
-		
+		Vektorrechnung();
+
 		System.out.println("Wählen sie aus ");
 		System.out.println(" ");
-		System.out.println(" =========================================");
-		System.out.println("||					 ||");
-		System.out.println("||[S] für Statistische Auswertungen 	 ||");
-		System.out.println("||[V] FÜr Vektorrechnung		 ||");
-		System.out.println("||[M] Für Matrizenrechnung		 ||");
-		System.out.println("||[B] Für Benden			 ||");
-		System.out.println("||					 ||");
-		System.out.println(" =========================================");
+		System.out.println(" =================================================");
+		System.out.println("||						 ||");
+		System.out.println("||[S] für Statistische Auswertungen 		 ||");
+		System.out.println("||[V] FÜr Vektorrechnung			 ||");
+		System.out.println("||[M] Für Matrizenrechnung			 ||");
+		System.out.println("||[B] Für Benden				 ||");
+		System.out.println("||						 ||");
+		System.out.println(" =================================================");
 		System.out.println(" ");
-		
+
 		String eingabe = IO.readString();
+
 		if (eingabe.equalsIgnoreCase("s"));{
-			
-			System.out.println(" ");
-			System.out.println(" =========================================");
-			System.out.println("||[M] Für Max- Minimum			||");
-			System.out.println("||[S] Für Spannweite");
-			
+			StatistischeAuswertungen();
 		}
-		if (eingabe.equalsIgnoreCase("V")){
-			
+		else if (eingabe.equalsIgnoreCase("V")){
+			Vektorrechnung();
 		}
-		if (eingabe.equalsIgnoreCase("M")) {
-			
+		else if (eingabe.equalsIgnoreCase("M")) {
+			Matrizenrechnung();
 		}
-		if (eingabe.equalsIgnoreCase("B")) {
+		else if (eingabe.equalsIgnoreCase("B")) {
 			System.out.println("Das Programm wird beendet!");
 			System.out.println("");
 		}
-		
+
+
+
+
 	}
 
+	private static void StatistischeAuswertungen() throws IOException {
+
+
+		System.out.println(" ");
+		System.out.println(" =================================================");
+		System.out.println("||						 ||");
+		System.out.println("||Statistische Auswertungen:			 ||");
+		System.out.println("||						 ||");
+		System.out.println("||[A] Für Max- Minimum				 ||");
+		System.out.println("||[B] Für Spannweite				 ||");
+		System.out.println("||[C] Für max- minimum Abweichung zweier	 ||");
+		System.out.println("||    benachbarter Messwerte		  	 ||");
+		System.out.println("||[D] Für Mittelberechnung(arithm;Geometrisches) ||");
+		System.out.println("||[E] Für Median				 ||");
+		System.out.println("||[F] Für Modalwert 				 ||");
+		System.out.println("||[G] Für Varianz				 ||");
+		System.out.println("||[H] Für Standardabweichung			 ||");
+		System.out.println("||[B] Für Benden				 ||");
+		System.out.println("||						 ||");
+		System.out.println(" =================================================");
+		System.out.println(" ");
+
+		String eingabeS = IO.readString();
+		//1.1
+		if(eingabeS.equalsIgnoreCase("A")) {
+
+		}
+		//1.2
+		else if(eingabeS.equalsIgnoreCase("B")) {
+
+		}
+		//1.3
+		else if (eingabeS.equalsIgnoreCase("C")) {
+
+		}
+		//1.4
+		else if (eingabeS.equalsIgnoreCase("D")) {
+		}
+		//1.5
+		else if (eingabeS.equalsIgnoreCase("E")) {
+
+		}
+		//1.6
+		else if (eingabeS.equalsIgnoreCase("F")) {
+
+		}
+		//1.7
+		else if (eingabeS.equalsIgnoreCase("G")) {
+
+		}
+		//1.8
+		else if (eingabeS.equalsIgnoreCase("H")) {
+
+		}
+		//1.8
+		else if (eingabeS.equalsIgnoreCase("Z")) {
+
+		}
+
+
+	}
+
+	private static void Vektorrechnung() {
+
+	}
+
+	private static void Matrizenrechnung() {
+
+	}
 }

@@ -143,7 +143,9 @@ public class Haupt {
 		else if (mat.equalsIgnoreCase("C")) {
 			
 		}
-		else if (mat.equalsIgnoreCase("d"))
+		else if (mat.equalsIgnoreCase("d")) {
+			
+		}
 	
 	}
 

@@ -3,7 +3,6 @@ package Statistische;
 import java.io.IOException;
 
 import oop.IO;
-
 public class StatistischeAuswertungen {
 
 	public static void main(String[] args) throws IOException {

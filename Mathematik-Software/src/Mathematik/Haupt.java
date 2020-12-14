@@ -32,16 +32,12 @@ public class Haupt {
 			Matrizenrechnung();
 		}
 		else if (eingabe.equalsIgnoreCase("B")) {
-			System.out.println("Sind sie sich sicher?");
+			System.out.println("programm wurde beendet! ");
 			
 		}
 
 	}
 	
-
-	private static void Benden() {
-		
-	}
 	
 	private static void StatistischeAuswertungen() throws IOException {
 
@@ -128,29 +124,28 @@ public class Haupt {
 		System.out.println("||						 ||");
 		System.out.println("||Matrizenrechnung			 	 ||");
 		System.out.println("||						 ||");
-		System.out.println("||Multiplikation mit einer Zahl			 ||");
-		System.out.println("||Addition zweier Matrizen			 ||");
-		System.out.println("||Multiplikation zweier Matrizen		 ||");
+		System.out.println("||[A]Multiplikation mit einer Zahl		 ||");
+		System.out.println("||[B]Addition zweier Matrizen			 ||");
+		System.out.println("||[C]Multiplikation zweier Matrizen		 ||");
+		System.out.println("||[D] Für Benden				 ||");
 		System.out.println("||						 ||");
 		System.out.println(" =================================================");
 		System.out.println(" ");
 		
 		String mat = IO.readString();
 		
-		if (mat.equalsIgnoreCase(mat)) {
+		if (mat.equalsIgnoreCase("a")) {
 			
 		}
-		else if (mat.equalsIgnoreCase(mat)) {
+		else if (mat.equalsIgnoreCase("B")) {
 			
 		}
-		else if (mat.equalsIgnoreCase(mat)) {
+		else if (mat.equalsIgnoreCase("C")) {
 			
 		}
-	
+		else if (mat.equalsIgnoreCase("d"))
 	
 	}
-
-
 
 
 }

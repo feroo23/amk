@@ -12,9 +12,11 @@ public class Haupt {
 		System.out.println(" ");
 		System.out.println(" =================================================");
 		System.out.println("||						 ||");
+		System.out.println("||[L] Lösung quadratischer Gleichungen		 ||");
+		System.out.println("||[W] Wachstums- bzw. Zerfallsprozesse		 ||");
 		System.out.println("||[S] für Statistische Auswertungen 		 ||");
-		System.out.println("||[V] FÜr Vektorrechnung			 ||");
-		System.out.println("||[M] Für Matrizenrechnung			 ||");
+		System.out.println("||[V] FÜr Vektorrechnung (1-dimensional)	 ||");
+		System.out.println("||[M] Für Matrizenrechnung (2-dimensional)	 ||");
 		System.out.println("||[B] Für Benden				 ||");
 		System.out.println("||						 ||");
 		System.out.println(" =================================================");
@@ -24,6 +26,9 @@ public class Haupt {
 
 		if (eingabe.equalsIgnoreCase("s")){
 			StatistischeAuswertungen();
+		}
+		else if (eingabe.equalsIgnoreCase("l")) {
+			
 		}
 		else if (eingabe.equalsIgnoreCase("V")){
 			Vektorrechnung();
@@ -56,7 +61,7 @@ public class Haupt {
 		System.out.println("||[F] Für Modalwert 				 ||");
 		System.out.println("||[G] Für Varianz				 ||");
 		System.out.println("||[H] Für Standardabweichung			 ||");
-		System.out.println("||[B] Für Benden				 ||");
+		System.out.println("||[Z] Für Benden				 ||");
 		System.out.println("||						 ||");
 		System.out.println(" =================================================");
 		System.out.println(" ");
@@ -95,39 +100,52 @@ public class Haupt {
 		}
 		//1.8
 		else if (eingabeS.equalsIgnoreCase("Z")) {
-
+			System.out.println("programm wurde beendet! ");
 		}
 
 
 	}
 
-	private static void Vektorrechnung() {
+	private static void Vektorrechnung() throws IOException {
 	
 		System.out.println(" ");
 		System.out.println(" =================================================");
 		System.out.println("||						 ||");
-		System.out.println("||Vektorrechnung:				 ||");
+		System.out.println("||Vektorrechnung: (1-dimensional)		 ||");
 		System.out.println("||						 ||");
-		System.out.println("||Multiplikation mit einer Zahl 		 ||");
-		System.out.println("||Addition zweier Vektoren			 ||");
-		System.out.println("||Multiplikation zweier Vektoren 		 ||");
+		System.out.println("||[A]Multiplikation mit einer Zahl 		 ||");
+		System.out.println("||[B]Addition zweier Vektoren			 ||");
+		System.out.println("||[C]Multiplikation zweier Vektoren 		 ||");
+		System.out.println("||[Z] Für Benden				 ||");
 		System.out.println("||						 ||");
 		System.out.println(" =================================================");
 		
+		String vek = IO.readString();
 		
-	
+		if(vek.equalsIgnoreCase("a")) {
+			
+		}
+		else if (vek.equalsIgnoreCase("b")) {
+			
+		}
+		else if (vek.equalsIgnoreCase("c")) {
+			
+		}
+		else if (vek.equalsIgnoreCase("z")) {
+			System.out.println("programm wurde beendet! ");
+		}
 	}
 
 	private static void Matrizenrechnung() throws IOException {
 		System.out.println(" ");
 		System.out.println(" =================================================");
 		System.out.println("||						 ||");
-		System.out.println("||Matrizenrechnung			 	 ||");
+		System.out.println("||Matrizenrechnung:(2-dimensional)		 ||");
 		System.out.println("||						 ||");
 		System.out.println("||[A]Multiplikation mit einer Zahl		 ||");
 		System.out.println("||[B]Addition zweier Matrizen			 ||");
 		System.out.println("||[C]Multiplikation zweier Matrizen		 ||");
-		System.out.println("||[D] Für Benden				 ||");
+		System.out.println("||[Z] Für Benden				 ||");
 		System.out.println("||						 ||");
 		System.out.println(" =================================================");
 		System.out.println(" ");
@@ -143,7 +161,8 @@ public class Haupt {
 		else if (mat.equalsIgnoreCase("C")) {
 			
 		}
-		else if (mat.equalsIgnoreCase("d")) {
+		else if (mat.equalsIgnoreCase("z")) {
+			System.out.println("programm wurde beendet! ");
 			
 		}
 	

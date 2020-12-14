@@ -7,8 +7,7 @@ import oop.IO;
 public class Haupt {
 
 	public static void main(String[] args) throws IOException {
-		Vektorrechnung();
-
+	
 		System.out.println("Wählen sie aus ");
 		System.out.println(" ");
 		System.out.println(" =================================================");
@@ -23,7 +22,7 @@ public class Haupt {
 
 		String eingabe = IO.readString();
 
-		if (eingabe.equalsIgnoreCase("s"));{
+		if (eingabe.equalsIgnoreCase("s")){
 			StatistischeAuswertungen();
 		}
 		else if (eingabe.equalsIgnoreCase("V")){
@@ -35,7 +34,6 @@ public class Haupt {
 		else if (eingabe.equalsIgnoreCase("B")) {
 			System.out.println("Sind sie sich sicher?");
 			
-		
 		}
 
 	}
@@ -108,16 +106,53 @@ public class Haupt {
 	}
 
 	private static void Vektorrechnung() {
+	
 		System.out.println(" ");
 		System.out.println(" =================================================");
 		System.out.println("||						 ||");
-		System.out.println("||Vektorrechnung:			||");
-		System.out.println("||Multiplikation mit einer Zahl 	||");
-		System.out.println("||Addition zweier Vektoren	 ||");
-		System.out.println("||Multiplikation zweier Vektoren 	||");
+		System.out.println("||Vektorrechnung:				 ||");
+		System.out.println("||						 ||");
+		System.out.println("||Multiplikation mit einer Zahl 		 ||");
+		System.out.println("||Addition zweier Vektoren			 ||");
+		System.out.println("||Multiplikation zweier Vektoren 		 ||");
+		System.out.println("||						 ||");
+		System.out.println(" =================================================");
+		
+		
+	
 	}
 
-	private static void Matrizenrechnung() {
-
+	private static void Matrizenrechnung() throws IOException {
+		System.out.println(" ");
+		System.out.println(" =================================================");
+		System.out.println("||						 ||");
+		System.out.println("||Matrizenrechnung			 	 ||");
+		System.out.println("||						 ||");
+		System.out.println("||Multiplikation mit einer Zahl			 ||");
+		System.out.println("||Addition zweier Matrizen			 ||");
+		System.out.println("||Multiplikation zweier Matrizen		 ||");
+		System.out.println("||						 ||");
+		System.out.println(" =================================================");
+		System.out.println(" ");
+		
+		String mat = IO.readString();
+		
+		if (mat.equalsIgnoreCase(mat)) {
+			
+		}
+		else if (mat.equalsIgnoreCase(mat)) {
+			
+		}
+		else if (mat.equalsIgnoreCase(mat)) {
+			
+		}
+	
+	
+	
+	
 	}
+
+
+
+
 }

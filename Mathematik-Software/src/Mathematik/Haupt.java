@@ -2,7 +2,7 @@ package Mathematik;
 
 import java.io.IOException;
 
-import Statistische.ferozh;
+import oop.AMK;
 import oop.IO;
 import wachstumsBzwZerfallsprozesse.Zerfallsprozesse;
 
@@ -116,7 +116,7 @@ public class Haupt {
 			double anz = IO.readDouble();
 			double testA = anz;
 			
-			double[] ergebnissA = ferozh .minMax(testA);
+			double[] ergebnissA = AMK.minMax(testA);
 			
 			System.out.println("Das Maximum beträgt: " + ergebnissA[0] );
 			System.out.println("Das Minimum beträgt: " + ergebnissA[1] );
@@ -132,7 +132,7 @@ public class Haupt {
 		//1.4
 		else if (eingabeS.equalsIgnoreCase("D")) {
 			int eins = eingabe();
-			
+			double ergebniss = AMK.mittelwert(eins);
 			
 			
 		}
@@ -160,6 +160,8 @@ public class Haupt {
 
 	}
 
+
+	
 
 	private static int eingabe() {
 		System.out.println("Wie viele werten wollen se eingeben ");

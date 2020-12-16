@@ -3,29 +3,47 @@ package wachstumsBzwZerfallsprozesse;
 import oop.IO;
 
 public class Zerfallsprozesse {
+	String[] args
+	String[] args
+	public static void wachstum() {
+		System.out.println("Geben sie die Startmenge an");
+		double startmenge = IO.readDouble();
 
-	public static void Zerfall() {
-		System.out.println("Geben sie die anzahl der Daten an, die sie benutzen für die geometrische Funtkion");
-		int n = IO.readInteger();
+		System.out.println("Geben sie den Faktor ein um den sie täglich erhöhen wollen");
+		double faktor = IO.readDouble();
+
+		System.out.println("Wieviele Tage wollen sie angezeigt bekommen");
+		double tage = IO.readDouble();
+
+		int starttag = 0;
+		System.out.println("");
+		System.out.println("Tage\tWachstumswert");
 
 
-		double [] geo = new double [n];
-
-
-		for (int i = 0; i < geo.length; i++) {
-			geo[i] = IO.readDouble();
+		for (int i = 0; i <= tage; i++) {
+			starttag = i;
+			double ergebnis = startmenge * Math.pow(faktor, i);
+			System.out.println(starttag + "\t" + ergebnis );
 		}
 
-		double produkt = 1;
+	}
 
-		for (int i = 0; i < geo.length; i++) {
-			produkt = produkt * geo[i];
+	public static void zerfall() {
+		System.out.println("Geben sie die Startmenge an");
+		double startmenge = IO.readDouble();
+		System.out.println("Geben sie den Faktor ein");
+		double faktor = IO.readDouble();
+		System.out.println("Wieviele Tage wollen sie angezeigt bekommen");
+		double tage = IO.readDouble();
+		int starttag = 0;
+		System.out.println("");
+		System.out.println("Tage\tZerfallswert");
+
+
+		for (int i = 0; i <= tage; i++) {
+			starttag = i;
+			double ergebnis = startmenge * Math.pow(faktor, i);
+			System.out.println(starttag + "\t" + ergebnis);			
 		}
-
-
-		produkt = Math.pow(Math.E, Math.log(produkt)/n);
-		System.out.println(produkt);
-
-
 	}
 }

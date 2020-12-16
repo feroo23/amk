@@ -2,12 +2,14 @@ package Mathematik;
 
 import java.io.IOException;
 
+import Statistische.ferozh;
 import oop.IO;
+import wachstumsBzwZerfallsprozesse.Zerfallsprozesse;
 
 public class Haupt {
-
-	public static void main(String[] args) throws IOException {
 	
+	public static void main(String[] args) throws IOException {
+
 		System.out.println("Wählen sie aus ");
 		System.out.println(" ");
 		System.out.println(" =================================================");
@@ -28,7 +30,10 @@ public class Haupt {
 			StatistischeAuswertungen();
 		}
 		else if (eingabe.equalsIgnoreCase("l")) {
-			
+			quadratischerGleichunge();
+		}
+		else if (eingabe.equalsIgnoreCase("W")) {
+			Zerfallsprozesse();
 		}
 		else if (eingabe.equalsIgnoreCase("V")){
 			Vektorrechnung();
@@ -38,12 +43,50 @@ public class Haupt {
 		}
 		else if (eingabe.equalsIgnoreCase("B")) {
 			System.out.println("programm wurde beendet! ");
-			
+
 		}
 
 	}
+
+
+	public static void Zerfallsprozesse() throws IOException {
+		System.out.println(" ");
+		System.out.println(" =================================================");
+		System.out.println("||						 ||");
+		System.out.println("||Zerfallsprozesse: 				 ||");
+		System.out.println("||						 ||");
+		System.out.println("||[A] Für wachstum 				 ||");
+		System.out.println("||[B] Für zerfall   				 ||");
+		System.out.println("||[Z] Für Benden				 ||");
+		System.out.println("||						 ||");
+		System.out.println(" =================================================");
+		
+		String eingabe = IO.readString();
+		
+		if(eingabe.equalsIgnoreCase("a")) {
+			Zerfallsprozesse.wachstum();
+		}
+		else if (eingabe.equalsIgnoreCase("b")) {
+			Zerfallsprozesse.zerfall();
+		}
+		else if (eingabe.equalsIgnoreCase("z")) {
+			System.out.println("Das Programm wurde beendet! ");
+		}
 	
-	
+	}
+
+
+	private static void quadratischerGleichunge() throws IOException {
+		System.out.println(" ");
+		System.out.println(" =================================================");
+		System.out.println("||						 ||");
+		System.out.println("||Quadratischer Gleichunge:				||");
+		System.out.println("||						 ||");
+
+
+	}
+
+
 	private static void StatistischeAuswertungen() throws IOException {
 
 
@@ -65,15 +108,22 @@ public class Haupt {
 		System.out.println("||						 ||");
 		System.out.println(" =================================================");
 		System.out.println(" ");
-
+		System.out.println(" ");
 		String eingabeS = IO.readString();
 		//1.1
 		if(eingabeS.equalsIgnoreCase("A")) {
-
+			System.out.println("Wie viele werte wollen sie eingeben? ");
+			double anz = IO.readDouble();
+			double testA = anz;
+			
+			double[] ergebnissA = ferozh .minMax(testA);
+			
+			System.out.println("Das Maximum beträgt: " + ergebnissA[0] );
+			System.out.println("Das Minimum beträgt: " + ergebnissA[1] );
 		}
 		//1.2
 		else if(eingabeS.equalsIgnoreCase("B")) {
-
+			
 		}
 		//1.3
 		else if (eingabeS.equalsIgnoreCase("C")) {
@@ -81,6 +131,10 @@ public class Haupt {
 		}
 		//1.4
 		else if (eingabeS.equalsIgnoreCase("D")) {
+			int eins = eingabe();
+			
+			
+			
 		}
 		//1.5
 		else if (eingabeS.equalsIgnoreCase("E")) {
@@ -106,8 +160,16 @@ public class Haupt {
 
 	}
 
+
+	private static int eingabe() {
+		System.out.println("Wie viele werten wollen se eingeben ");
+		int eingabe = IO.readInteger();
+		 return eingabe;
+	}
+
+
 	private static void Vektorrechnung() throws IOException {
-	
+
 		System.out.println(" ");
 		System.out.println(" =================================================");
 		System.out.println("||						 ||");
@@ -119,17 +181,17 @@ public class Haupt {
 		System.out.println("||[Z] Für Benden				 ||");
 		System.out.println("||						 ||");
 		System.out.println(" =================================================");
-		
+
 		String vek = IO.readString();
-		
+
 		if(vek.equalsIgnoreCase("a")) {
-			
+
 		}
 		else if (vek.equalsIgnoreCase("b")) {
-			
+
 		}
 		else if (vek.equalsIgnoreCase("c")) {
-			
+
 		}
 		else if (vek.equalsIgnoreCase("z")) {
 			System.out.println("programm wurde beendet! ");
@@ -149,24 +211,23 @@ public class Haupt {
 		System.out.println("||						 ||");
 		System.out.println(" =================================================");
 		System.out.println(" ");
-		
+
 		String mat = IO.readString();
-		
+
 		if (mat.equalsIgnoreCase("a")) {
-			
+
 		}
 		else if (mat.equalsIgnoreCase("B")) {
-			
+
 		}
 		else if (mat.equalsIgnoreCase("C")) {
-			
+
 		}
 		else if (mat.equalsIgnoreCase("z")) {
 			System.out.println("programm wurde beendet! ");
-			
-		}
-	
-	}
 
+		}
+
+	}
 
 }

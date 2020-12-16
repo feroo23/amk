@@ -7,7 +7,7 @@ import oop.IO;
 import wachstumsBzwZerfallsprozesse.Zerfallsprozesse;
 
 public class Haupt {
-	
+
 	public static void main(String[] args) throws IOException {
 
 		System.out.println("Wählen sie aus ");
@@ -60,9 +60,9 @@ public class Haupt {
 		System.out.println("||[Z] Für Benden				 ||");
 		System.out.println("||						 ||");
 		System.out.println(" =================================================");
-		
+
 		String eingabe = IO.readString();
-		
+
 		if(eingabe.equalsIgnoreCase("a")) {
 			Zerfallsprozesse.wachstum();
 		}
@@ -72,7 +72,7 @@ public class Haupt {
 		else if (eingabe.equalsIgnoreCase("z")) {
 			System.out.println("Das Programm wurde beendet! ");
 		}
-	
+
 	}
 
 
@@ -115,14 +115,22 @@ public class Haupt {
 			System.out.println("Wie viele werte wollen sie eingeben? ");
 			double anz = IO.readDouble();
 			double testA = anz;
-			
+
 			double[] ergebnissA = AMK.minMax(testA);
-			
+
 			System.out.println("Das Maximum beträgt: " + ergebnissA[0] );
 			System.out.println("Das Minimum beträgt: " + ergebnissA[1] );
 		}
 		//1.2
 		else if(eingabeS.equalsIgnoreCase("B")) {
+			System.out.println("Geben sie ihren Kleinsten Wert ein ");
+			int eins = IO.readInteger();
+			System.out.println("Geben sie ihrern Größten Wert ein");
+			int zwei = IO.readInteger();
+			
+			int ergbnis = AMK.spannweite(eins,zwei);
+			
+			System.out.println("Die Spannweite von " + eins + " und " + zwei + " beträgt " + ergbnis);
 			
 		}
 		//1.3
@@ -131,10 +139,32 @@ public class Haupt {
 		}
 		//1.4
 		else if (eingabeS.equalsIgnoreCase("D")) {
-			int eins = eingabe();
-			double ergebniss = AMK.mittelwert(eins);
-			
-			
+
+			System.out.println(" ");
+			System.out.println(" =================================================");
+			System.out.println("||						 ||");
+			System.out.println("||Mittelberechnung:			 ||");
+			System.out.println("||						 ||");
+			System.out.println("||[A] Für Arithmetisches mittel 		 ||");
+			System.out.println("||[B] Für Geometrisches mittel			 ||");
+			System.out.println("||[Z] Für Benden				 ||");
+			System.out.println("||						 ||");
+			System.out.println(" =================================================");
+			System.out.println(" ");
+
+			String D = IO.readString();
+
+			if (D.equalsIgnoreCase("a")){
+				int eins = eingabe();
+				double ergebniss = AMK.mittelwert(eins);
+				System.out.println("Der arithmetisches mittel beträgt " + ergebniss);
+			}
+			else if (D.equalsIgnoreCase("b")) {
+
+			}
+			else if (D.equalsIgnoreCase("z")) {
+				System.out.println("programm wurde beendet! ");
+			}
 		}
 		//1.5
 		else if (eingabeS.equalsIgnoreCase("E")) {
@@ -161,12 +191,10 @@ public class Haupt {
 	}
 
 
-	
-
 	private static int eingabe() {
 		System.out.println("Wie viele werten wollen se eingeben ");
 		int eingabe = IO.readInteger();
-		 return eingabe;
+		return eingabe;
 	}
 
 

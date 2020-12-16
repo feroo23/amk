@@ -25,7 +25,6 @@ public class AMK {
 				for (int j = 1; j < tage.length; j++) {
 					if (min > tage[j]) {
 						min = tage[j];
-
 					}
 				}
 			}
@@ -47,12 +46,19 @@ public class AMK {
 			summe += tage [i];
 		}
 		
-		double ergebniss = summe/eins;
-		System.out.println(ergebniss);
+		double ergebnis = summe/eins;
+		String.format("%.3f", ergebnis);
+		System.out.println(ergebnis);
 		
-			
+		return ergebnis;
 		
-		return ergebniss;
+	}
+
+
+	public static int spannweite(int eins, int zwei) {
+		int sum = eins-zwei;
+		sum = sum * -1;
 		
+		return sum;
 	}
 }

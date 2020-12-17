@@ -58,10 +58,10 @@ public class IO {
 				} else if (eingabe.equalsIgnoreCase("nein") || eingabe.equalsIgnoreCase("no")){
 					return false;
 				} else {
-					System.out.println("Geben sie nur ja,yes,,nein,no ein");
+					System.out.println("Geben sie nur ja,yes,nein,no");
 				}
 			} catch (Exception e) {
-				System.out.println("Geben sie nur ja,yes,,nein,no ein");
+				System.out.println("Geben sie nur ja,yes,nein,no");
 			}
 		}
 	}

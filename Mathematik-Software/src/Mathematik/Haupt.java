@@ -9,7 +9,9 @@ import wachstumsBzwZerfallsprozesse.Zerfallsprozesse;
 public class Haupt {
 
 	public static void main(String[] args) throws IOException {
-
+		AMK();
+	}
+	public static void AMK() throws IOException {
 		System.out.println("Wählen sie aus ");
 		System.out.println(" ");
 		System.out.println(" =================================================");
@@ -25,8 +27,8 @@ public class Haupt {
 		System.out.println(" ");
 
 		String eingabe = IO.readString();
-
-		if (eingabe.equalsIgnoreCase("s")){
+		
+		if (eingabe.equalsIgnoreCase("S")){
 			StatistischeAuswertungen();
 		}
 		else if (eingabe.equalsIgnoreCase("l")) {
@@ -40,6 +42,7 @@ public class Haupt {
 		}
 		else if (eingabe.equalsIgnoreCase("M")) {
 			Matrizenrechnung();
+			
 		}
 		else if (eingabe.equalsIgnoreCase("B")) {
 			System.out.println("programm wurde beendet! ");
@@ -48,7 +51,8 @@ public class Haupt {
 
 	}
 
-
+	
+	
 	public static void Zerfallsprozesse() throws IOException {
 		System.out.println(" ");
 		System.out.println(" =================================================");
@@ -120,6 +124,7 @@ public class Haupt {
 
 			System.out.println("Das Maximum beträgt: " + ergebnissA[0] );
 			System.out.println("Das Minimum beträgt: " + ergebnissA[1] );
+			
 		}
 		//1.2
 		else if(eingabeS.equalsIgnoreCase("B")) {
@@ -131,7 +136,7 @@ public class Haupt {
 			int ergbnis = AMK.spannweite(eins,zwei);
 			
 			System.out.println("Die Spannweite von " + eins + " und " + zwei + " beträgt " + ergbnis);
-			
+			AMK.weiter();
 		}
 		//1.3
 		else if (eingabeS.equalsIgnoreCase("C")) {
@@ -139,7 +144,7 @@ public class Haupt {
 		}
 		//1.4
 		else if (eingabeS.equalsIgnoreCase("D")) {
-
+		
 			System.out.println(" ");
 			System.out.println(" =================================================");
 			System.out.println("||						 ||");
@@ -164,27 +169,43 @@ public class Haupt {
 			}
 			else if (D.equalsIgnoreCase("z")) {
 				System.out.println("programm wurde beendet! ");
+				
 			}
+			else {
+				System.out.println("Versuche es nochmal deine Auswahl an buchstaben siehst du hier [] drinnen ");
+				
+			}
+			
 		}
 		//1.5
 		else if (eingabeS.equalsIgnoreCase("E")) {
-
+			int eins =eingabe();
+			double ergbnis = AMK.Median(eins);
+			System.out.println(ergbnis);
 		}
 		//1.6
 		else if (eingabeS.equalsIgnoreCase("F")) {
-
+			int eins =eingabe();
+			AMK.Modalwert();
 		}
 		//1.7
 		else if (eingabeS.equalsIgnoreCase("G")) {
-
+			int eins =eingabe();
+			AMK.Varianz();
 		}
 		//1.8
 		else if (eingabeS.equalsIgnoreCase("H")) {
-
+			int eins =eingabe();
+			AMK.Standardabweichung();
 		}
 		//1.8
 		else if (eingabeS.equalsIgnoreCase("Z")) {
 			System.out.println("programm wurde beendet! ");
+		}
+		//1.9
+		else {
+			System.out.println("Versuche es nochmal deine Auswahl an buchstaben siehst du hier [] drinnen ");
+			StatistischeAuswertungen();
 		}
 
 
@@ -215,16 +236,20 @@ public class Haupt {
 		String vek = IO.readString();
 
 		if(vek.equalsIgnoreCase("a")) {
-
+			AMK.MultiplikationMitEinerZahl();
 		}
 		else if (vek.equalsIgnoreCase("b")) {
-
+			AMK.AdditionZweierVektoren();
 		}
 		else if (vek.equalsIgnoreCase("c")) {
-
+			AMK.MUltiplikationZweierVektoren();
 		}
 		else if (vek.equalsIgnoreCase("z")) {
 			System.out.println("programm wurde beendet! ");
+		}
+		else {
+			System.out.println("Versuche es nochmal deine Auswahl an buchstaben siehst du hier [] drinnen ");
+			Vektorrechnung();
 		}
 	}
 
@@ -245,19 +270,21 @@ public class Haupt {
 		String mat = IO.readString();
 
 		if (mat.equalsIgnoreCase("a")) {
-
+			AMK.MultiplikationMitEinerZahl2D();
 		}
 		else if (mat.equalsIgnoreCase("B")) {
-
+			AMK.AdditionZweierVektoren2D();
 		}
 		else if (mat.equalsIgnoreCase("C")) {
-
+			AMK.MUltiplikationZweierVektoren2D();
 		}
 		else if (mat.equalsIgnoreCase("z")) {
 			System.out.println("programm wurde beendet! ");
-
 		}
-
+		else {
+			System.out.println("Versuche es nochmal deine Auswahl an buchstaben siehst du hier [] drinnen ");
+			Matrizenrechnung();
+		}
 	}
 
 }

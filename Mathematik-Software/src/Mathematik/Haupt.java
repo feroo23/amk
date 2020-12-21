@@ -9,6 +9,7 @@ import wachstumsBzwZerfallsprozesse.Zerfallsprozesse;
 public class Haupt {
 
 	public static void main(String[] args) throws IOException, InterruptedException{
+		ende();
 		AMK();
 	}
 	public static void AMK() throws IOException, InterruptedException {
@@ -26,7 +27,7 @@ public class Haupt {
 		System.out.println(" ");
 
 		String eingabe = IO.readString();
-		
+
 		if (eingabe.equalsIgnoreCase("S")){
 			StatistischeAuswertungen();
 		}
@@ -48,8 +49,8 @@ public class Haupt {
 		}
 	}
 
-	
-	
+
+
 	public static void Zerfallsprozesse() throws IOException {
 		System.out.println(" ");
 		System.out.println(" =================================================");
@@ -112,7 +113,6 @@ public class Haupt {
 		System.out.println("||						 ||");
 		System.out.println(" =================================================");
 		System.out.println(" ");
-		System.out.println(" ");
 		String eingabeS = IO.readString();
 		//1.1
 		if(eingabeS.equalsIgnoreCase("A")) {
@@ -125,11 +125,14 @@ public class Haupt {
 			System.out.println("Das Minimum beträgt: " + ergebnissA[1] );
 			System.out.println(" ");
 			System.out.println(" =================================================");
+			System.out.println("||						 ||");
 			System.out.println("||[A] FÜr Wollen sie andre rechnungen machen?	 ||");
 			System.out.println("||[B] Für Durschnitt berechnen  		 ||");
 			System.out.println("||[Z] Für Benden 				 ||");
+			System.out.println("||						 ||");
+			System.out.println(" =================================================");
 			String eingabe = IO.readString();
-			
+
 			if (eingabe.equalsIgnoreCase("A")) {
 				AMK();
 			}
@@ -142,7 +145,7 @@ public class Haupt {
 				String.format("%.3f", ergebnis);
 				System.out.println("Der Durschnitt beträgt " + ergebnis);
 			}
-			
+
 		}
 		//1.2
 		else if(eingabeS.equalsIgnoreCase("B")) {
@@ -150,41 +153,54 @@ public class Haupt {
 			int eins = IO.readInteger();
 			System.out.println("Geben sie ihrern Größten Wert ein");
 			int zwei = IO.readInteger();
-			
+
 			int ergbnis = AMK.spannweite(eins,zwei);
-			
+
 			System.out.println("Die Spannweite von " + eins + " und " + zwei + " beträgt " + ergbnis);
 			AMK.weiter();
 		}
 		//1.3
 		else if (eingabeS.equalsIgnoreCase("C")) {
-			System.out.println("Wollen sie min- maximale abweichung");
+			System.out.println("Wollen sie min- oder maximale abweichung");
 			String a = IO.readString();
 			if(a.equalsIgnoreCase("max") || a.equalsIgnoreCase("maximale")) {
 				int zwei = eingabe();
 				double[] eingabe =AMK.arrErstellendouble(zwei);
 				double ergebnis= AMK.maxAbweichung(eingabe);
-				
+				System.out.println("Die maximale Abweichung beträgt " + eingabe );
+
 			}
 			else if (a.equalsIgnoreCase("maximale abweichung")) {
 				int zwei = eingabe();
 				double[] eingabe =AMK.arrErstellendouble(zwei);
-				double ergebnis= AMK.maxAbweichung(eingabe);
-				
+				double ergebnis = AMK.maxAbweichung(eingabe);
+				System.out.println("Die maximale Abweichung beträgt " + eingabe );
+
 			}
 			else if (a.equalsIgnoreCase("min") || a.equalsIgnoreCase("minimale abweichung")) {
 				int zwei = eingabe();
 				double[] eingabe = AMK.arrErstellendouble(zwei);
 				double ergbnis = AMK.minAbweichung(eingabe); 
+				System.out.println("Die minimale Abweichung beträgt " + eingabe );
+
 			}
-			
-			
-			
-			
+			else if (a.equalsIgnoreCase("minimale")){
+				int zwei = eingabe();
+				double[] eingabe = AMK.arrErstellendouble(zwei);
+				double ergebiss = AMK.minAbweichung(eingabe);
+				System.out.println("Die minimale Abweichung beträgt " + eingabe );
+			}
+			else {
+				System.out.println("Probieren sie es nochmal ");
+				System.out.println("Sie werden wieder zur auswahl geschichkt");
+				StatistischeAuswertungen();
+				
+			}
+	
 		}
 		//1.4
 		else if (eingabeS.equalsIgnoreCase("D")) {
-		
+
 			System.out.println(" ");
 			System.out.println(" =================================================");
 			System.out.println("||						 ||");
@@ -210,39 +226,38 @@ public class Haupt {
 			}
 			else if (D.equalsIgnoreCase("z")) {
 				System.out.println("programm wurde beendet! ");
-				
+
 			}
 			else {
 				System.out.println("Versuche es nochmal deine Auswahl an buchstaben siehst du hier [] drinnen ");
-				
+
 			}
-			
+
 		}
 		//1.5
 		else if (eingabeS.equalsIgnoreCase("E")) {
-			int eins = eingabe();
+			int eingabe = eingabe();
+			double[] eins = AMK.arrErstellendouble(eingabe);
 			double ergbnis = AMK.Median(eins);
 			System.out.println(ergbnis);
 		}
 		//1.6
 		else if (eingabeS.equalsIgnoreCase("F")) {
 			int eins =eingabe();
-			int[] anz = AMK.arrErstellenint(eins);
-			double[] ergebnis = AMK.Modalwert(anz);
+			double[] anz = AMK.arrErstellendouble(eins);
+			double ergebnis = AMK.Modalwert(anz);
 			System.out.println(ergebnis);
-				
+
 		}
 		//1.7
 		else if (eingabeS.equalsIgnoreCase("G")) {
-			double[] eins = einga();
-			double zwei = AMK.Varianz(eins);
-		System.out.println("Die Varianz beträgt" + zwei);
-		
+			int eins = eingabe();
+
 		}
 		//1.8
 		else if (eingabeS.equalsIgnoreCase("H")) {
 			int eins =eingabe();
-			AMK.Standardabweichung();
+			
 		}
 		//1.8
 		else if (eingabeS.equalsIgnoreCase("Z")) {
@@ -257,9 +272,9 @@ public class Haupt {
 
 	}
 
-	
+
 	public static int eingabe() {
-		System.out.println("Wie viele werten wollen se eingeben ");
+		System.out.println("Wie viele werten wollen sie eingeben ");
 		int eingabe = IO.readInteger();
 		return eingabe;
 	}
@@ -332,5 +347,13 @@ public class Haupt {
 			Matrizenrechnung();
 		}
 	}
-
+	private static void ende() {
+		System.out.println(" ");
+		System.out.println(" =================================================");
+		System.out.println("||						 ||");
+		System.out.println("||[A] FÜr Wollen sie andre rechnungen machen?	 ||");
+		System.out.println("||[B] Für benden				 ||");
+		System.out.println("||						 ||");
+		System.out.println(" =================================================");
+	}
 }

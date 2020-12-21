@@ -12,21 +12,21 @@ public class AMK {
 
 
 	public static double[] minMax(int[] an) {
-		double [] tage = new double [an];
+		
 		double summe = 0;
 		double max;
 		double min;
-		for (int i = 0; i < tage.length; i++) {
-			summe += tage [i];
+		for (int i = 0; i < an.length; i++) {
+			summe += an [i];
 		}
-		max = tage[0];
-		min = tage[0];
-		for (int i = 1; i < tage.length; i++) {
-			if (max < tage[i]) {
-				max = tage[i];
-				for (int j = 1; j < tage.length; j++) {
-					if (min > tage[j]) {
-						min = tage[j];
+		max = an[0];
+		min = an[0];
+		for (int i = 1; i < an.length; i++) {
+			if (max < an[i]) {
+				max = an[i];
+				for (int j = 1; j < an.length; j++) {
+					if (min > an[j]) {
+						min = an[j];
 					}
 				}
 			}
@@ -39,17 +39,17 @@ public class AMK {
 
 	}
 	public static double mittelwert(int[] anz) {
-		double [] sum = new double [(double) anz];
 		double summe = 0;
-		for (int i = 0; i < sum.length; i++) {
-			summe += sum [i];
+		int sum = 0;
+		for (int i = 0; i < anz.length; i++) {
+			summe += anz[i];
+			sum = sum + i;
 		}
 
-		double ergebnis = summe / anz;
+		double ergebnis = summe / sum;
 		String.format("%.3f", ergebnis);
 
 		return ergebnis;
-
 	}
 
 

@@ -16,7 +16,6 @@ public class Haupt {
 		System.out.println(" ");
 		System.out.println(" =================================================");
 		System.out.println("||						 ||");
-		System.out.println("||[L] Lösung quadratischer Gleichungen		 ||");
 		System.out.println("||[W] Wachstums- bzw. Zerfallsprozesse		 ||");
 		System.out.println("||[S] für Statistische Auswertungen 		 ||");
 		System.out.println("||[V] FÜr Vektorrechnung (1-dimensional)	 ||");
@@ -30,9 +29,6 @@ public class Haupt {
 		
 		if (eingabe.equalsIgnoreCase("S")){
 			StatistischeAuswertungen();
-		}
-		else if (eingabe.equalsIgnoreCase("l")) {
-			quadratischerGleichunge();
 		}
 		else if (eingabe.equalsIgnoreCase("W")) {
 			Zerfallsprozesse();
@@ -122,7 +118,7 @@ public class Haupt {
 		if(eingabeS.equalsIgnoreCase("A")) {
 			System.out.println("Wie viele werte wollen sie eingeben? ");
 			int eins = IO.readInteger();
-			int[] an = AMK.arrErstellen(eins);
+			int[] an = AMK.arrErstellenint(eins);
 			double[] ergebnissA = AMK.minMax(an);
 
 			System.out.println("Das Maximum beträgt: " + ergebnissA[0] );
@@ -162,7 +158,29 @@ public class Haupt {
 		}
 		//1.3
 		else if (eingabeS.equalsIgnoreCase("C")) {
-
+			System.out.println("Wollen sie min- maximale abweichung");
+			String a = IO.readString();
+			if(a.equalsIgnoreCase("max") || a.equalsIgnoreCase("maximale")) {
+				int zwei = eingabe();
+				double[] eingabe =AMK.arrErstellendouble(zwei);
+				double ergebnis= AMK.maxAbweichung(eingabe);
+				
+			}
+			else if (a.equalsIgnoreCase("maximale abweichung")) {
+				int zwei = eingabe();
+				double[] eingabe =AMK.arrErstellendouble(zwei);
+				double ergebnis= AMK.maxAbweichung(eingabe);
+				
+			}
+			else if (a.equalsIgnoreCase("min") || a.equalsIgnoreCase("minimale abweichung")) {
+				int zwei = eingabe();
+				double[] eingabe = AMK.arrErstellendouble(zwei);
+				double ergbnis = AMK.minAbweichung(eingabe); 
+			}
+			
+			
+			
+			
 		}
 		//1.4
 		else if (eingabeS.equalsIgnoreCase("D")) {
@@ -183,7 +201,7 @@ public class Haupt {
 
 			if (D.equalsIgnoreCase("a")){
 				int eins = eingabe();
-				int[] anz = AMK.arrErstellen(eins);
+				int[] anz = AMK.arrErstellenint(eins);
 				double ergebniss = AMK.mittelwert(anz);
 				System.out.println("Der arithmetisches mittel beträgt " + ergebniss);
 			}
@@ -202,24 +220,24 @@ public class Haupt {
 		}
 		//1.5
 		else if (eingabeS.equalsIgnoreCase("E")) {
-			int eins =eingabe();
+			int eins = eingabe();
 			double ergbnis = AMK.Median(eins);
 			System.out.println(ergbnis);
 		}
 		//1.6
 		else if (eingabeS.equalsIgnoreCase("F")) {
-	/*		int eins =eingabe();
-			int[] anz = AMK.arrErstellen(eins);
+			int eins =eingabe();
+			int[] anz = AMK.arrErstellenint(eins);
 			double[] ergebnis = AMK.Modalwert(anz);
 			System.out.println(ergebnis);
-			*/	
+				
 		}
 		//1.7
 		else if (eingabeS.equalsIgnoreCase("G")) {
-		/*	double[] eins = eingabe();
+			double[] eins = einga();
 			double zwei = AMK.Varianz(eins);
 		System.out.println("Die Varianz beträgt" + zwei);
-		*/
+		
 		}
 		//1.8
 		else if (eingabeS.equalsIgnoreCase("H")) {
@@ -240,7 +258,7 @@ public class Haupt {
 	}
 
 	
-	private static int eingabe() {
+	public static int eingabe() {
 		System.out.println("Wie viele werten wollen se eingeben ");
 		int eingabe = IO.readInteger();
 		return eingabe;

@@ -80,8 +80,20 @@ public class AMK {
 			Haupt.AMK();
 		}
 	}
-
-	public static int[] arrErstellen(int eins){
+	
+	public static double[] arrErstellendouble(int zwei) {
+		double[] anz = new double[(int) zwei];
+		double summe = 0;
+		
+		for (int i = 0; i < anz.length; i++) {
+			System.out.println("Geben sie den Wert" + (i+1) + "ein");
+			anz[i] = IO.readDouble();
+			summe += anz[i];
+		}
+		return anz;
+	}
+	
+	public static int[] arrErstellenint(int eins){
 		int[] anz = new int[ eins];
 		double summe = 0;
 		for (int i = 0; i < anz.length; i++) {
@@ -126,8 +138,6 @@ public class AMK {
 		// TODO Auto-generated method stub
 
 	}
-
-
 	public static double Median(double [] eins) {
 
 		if (eins.length % 2 == 0) {
@@ -140,7 +150,6 @@ public class AMK {
 
 
 	public static double Modalwert(double[] anz) {
-
 		double mode = 0;
 
 		for (int j = 0; j < anz.length + 1; j++) {
@@ -192,10 +201,133 @@ public class AMK {
 	}
 
 
-	public static void Standardabweichung() {
-		// TODO Auto-generated method stub
+	public static double Standardabweichung(double[] eins) {
 
+
+		double [] deviation = new double[eins.length - 1];
+
+
+		for (int j = 0; j < eins.length + 1; j++) {
+			for (int i = 0; i < eins.length - 1; i++) {
+				if (eins[i] > eins[i + 1]) {
+					double c = eins[i];
+					eins[i] = eins[i + 1];
+					eins[i + 1] = c;
+				}
+			}
+		}
+
+		for (int i = 0; i < deviation.length; i++){
+			deviation[i] = eins[i + 1] - eins[i];
+		}
+
+		double max = deviation[0];
+
+		for (int i = 1; i < deviation.length; i++){
+			if (deviation[i] > max){
+				max = deviation[i];
+			}
+		}
+
+		return max;
 	}
 
-}
+
+	public static double getMinDeviation(double [] eingabe){
+
+		double[] abweichung= new double[eingabe.length - 1];
+		
+		for (int j = 0; j < eingabe.length + 1; j++) {
+			for (int i = 0; i < eingabe.length - 1; i++) {
+				if (eingabe[i] > eingabe[i + 1]) {
+					double a = eingabe[i];
+					eingabe[i] = eingabe[i + 1];
+					eingabe[i + 1] = a;
+				}
+			}
+		}
+
+		for (int i = 0; i < abweichung.length; i++){
+			abweichung[i] = eingabe[i + 1] - eingabe[i];
+		}
+
+		double min = abweichung[0];
+
+		for (int i = 1; i < abweichung.length; i++){
+			if (abweichung[i] < min){
+				min = abweichung[i];
+			}
+		}
+
+		return min;
+	}
+
+
+	public static double maxAbweichung(double[] eingabe) {
+		 double [] abweichung = new double[eingabe.length - 1];
+
+
+	        for (int j = 0; j < eingabe.length + 1; j++) {
+	            for (int i = 0; i < eingabe.length - 1; i++) {
+	                if (eingabe[i] > eingabe[i + 1]) {
+	                    double a = eingabe[i];
+	                    eingabe[i] = eingabe[i + 1];
+	                    eingabe[i + 1] = a;
+	                }
+	            }
+	        }
+
+	        for (int i = 0; i < abweichung.length; i++){
+	            abweichung[i] = eingabe[i + 1] - eingabe[i];
+	        }
+
+	        double max = abweichung[0];
+
+	        for (int i = 1; i < abweichung.length; i++){
+	            if (abweichung[i] > max){
+	                max = abweichung[i];
+	            }
+	        }
+
+	        return max;
+	    }
+
+	
+	    
+	    public static double minAbweichung(double [] eingabe){
+
+	        double[] abweichung = new double[eingabe.length - 1];
+
+	        for (int j = 0; j < eingabe.length + 1; j++) {
+	            for (int i = 0; i < eingabe.length - 1; i++) {
+	                if (eingabe[i] > eingabe[i + 1]) {
+	                    double a = eingabe[i];
+	                    eingabe[i] = eingabe[i + 1];
+	                    eingabe[i + 1] = a;
+	                }
+	            }
+	        }
+
+	        for (int i = 0; i < abweichung.length; i++){
+	            abweichung[i] = eingabe[i + 1] - eingabe[i];
+	        }
+
+	        double min = abweichung[0];
+
+	        for (int i = 1; i < abweichung.length; i++){
+	            if (abweichung[i] < min){
+	                min = abweichung[i];
+	            }
+	        }
+
+	        return min;
+	    }
+
+		
+	}
+
+
+
+
+
 

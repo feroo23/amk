@@ -8,10 +8,10 @@ import wachstumsBzwZerfallsprozesse.Zerfallsprozesse;
 
 public class Haupt {
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException, InterruptedException{
 		AMK();
 	}
-	public static void AMK() throws IOException {
+	public static void AMK() throws IOException, InterruptedException {
 		System.out.println("Wählen sie aus ");
 		System.out.println(" ");
 		System.out.println(" =================================================");
@@ -42,13 +42,14 @@ public class Haupt {
 		}
 		else if (eingabe.equalsIgnoreCase("M")) {
 			Matrizenrechnung();
-			
 		}
 		else if (eingabe.equalsIgnoreCase("B")) {
 			System.out.println("programm wurde beendet! ");
-
 		}
-
+		else {
+			System.out.println("Versuche es nochmal deine Auswahl an buchstaben siehst du hier [] drinnen ");	
+			AMK();
+		}
 	}
 
 	
@@ -76,7 +77,10 @@ public class Haupt {
 		else if (eingabe.equalsIgnoreCase("z")) {
 			System.out.println("Das Programm wurde beendet! ");
 		}
-
+		else {
+			System.out.println("Versuche es nochmal deine Auswahl an buchstaben siehst du hier [] drinnen ");	
+			Zerfallsprozesse();
+		}
 	}
 
 
@@ -91,7 +95,7 @@ public class Haupt {
 	}
 
 
-	private static void StatistischeAuswertungen() throws IOException {
+	private static void StatistischeAuswertungen() throws IOException, InterruptedException {
 
 
 		System.out.println(" ");
@@ -117,13 +121,31 @@ public class Haupt {
 		//1.1
 		if(eingabeS.equalsIgnoreCase("A")) {
 			System.out.println("Wie viele werte wollen sie eingeben? ");
-			double anz = IO.readDouble();
-			double testA = anz;
-
-			double[] ergebnissA = AMK.minMax(testA);
+			int eins = IO.readInteger();
+			int[] an = AMK.arrErstellen(eins);
+			double[] ergebnissA = AMK.minMax(an);
 
 			System.out.println("Das Maximum beträgt: " + ergebnissA[0] );
 			System.out.println("Das Minimum beträgt: " + ergebnissA[1] );
+			System.out.println(" ");
+			System.out.println(" =================================================");
+			System.out.println("||[A] FÜr Wollen sie andre rechnungen machen?	 ||");
+			System.out.println("||[B] Für Durschnitt berechnen  		 ||");
+			System.out.println("||[Z] Für Benden 				 ||");
+			String eingabe = IO.readString();
+			
+			if (eingabe.equalsIgnoreCase("A")) {
+				AMK();
+			}
+			else if (eingabe.equalsIgnoreCase("b")) {
+				double summe = 0;
+				for (int i = 0; i <= eins; i++) {
+					summe += an[i];
+				}
+				double ergebnis = summe/eins;
+				String.format("%.3f", ergebnis);
+				System.out.println("Der Durschnitt beträgt " + ergebnis);
+			}
 			
 		}
 		//1.2
@@ -161,7 +183,8 @@ public class Haupt {
 
 			if (D.equalsIgnoreCase("a")){
 				int eins = eingabe();
-				double ergebniss = AMK.mittelwert(eins);
+				int[] anz = AMK.arrErstellen(eins);
+				double ergebniss = AMK.mittelwert(anz);
 				System.out.println("Der arithmetisches mittel beträgt " + ergebniss);
 			}
 			else if (D.equalsIgnoreCase("b")) {
@@ -185,13 +208,18 @@ public class Haupt {
 		}
 		//1.6
 		else if (eingabeS.equalsIgnoreCase("F")) {
-			int eins =eingabe();
-			AMK.Modalwert();
+	/*		int eins =eingabe();
+			int[] anz = AMK.arrErstellen(eins);
+			double[] ergebnis = AMK.Modalwert(anz);
+			System.out.println(ergebnis);
+			*/	
 		}
 		//1.7
 		else if (eingabeS.equalsIgnoreCase("G")) {
-			int eins =eingabe();
-			AMK.Varianz();
+		/*	double[] eins = eingabe();
+			double zwei = AMK.Varianz(eins);
+		System.out.println("Die Varianz beträgt" + zwei);
+		*/
 		}
 		//1.8
 		else if (eingabeS.equalsIgnoreCase("H")) {
@@ -211,7 +239,7 @@ public class Haupt {
 
 	}
 
-
+	
 	private static int eingabe() {
 		System.out.println("Wie viele werten wollen se eingeben ");
 		int eingabe = IO.readInteger();

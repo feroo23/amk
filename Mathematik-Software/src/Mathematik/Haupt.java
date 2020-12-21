@@ -9,8 +9,8 @@ import wachstumsBzwZerfallsprozesse.Zerfallsprozesse;
 public class Haupt {
 
 	public static void main(String[] args) throws IOException, InterruptedException{
-		ende();
 		AMK();
+		
 	}
 	public static void AMK() throws IOException, InterruptedException {
 		System.out.println("Wählen sie aus ");
@@ -51,7 +51,7 @@ public class Haupt {
 
 
 
-	public static void Zerfallsprozesse() throws IOException {
+	public static void Zerfallsprozesse() throws IOException, InterruptedException {
 		System.out.println(" ");
 		System.out.println(" =================================================");
 		System.out.println("||						 ||");
@@ -59,6 +59,7 @@ public class Haupt {
 		System.out.println("||						 ||");
 		System.out.println("||[A] Für wachstum 				 ||");
 		System.out.println("||[B] Für zerfall   				 ||");
+		System.out.println("||[X] Für Zurück 				 ||");
 		System.out.println("||[Z] Für Benden				 ||");
 		System.out.println("||						 ||");
 		System.out.println(" =================================================");
@@ -71,6 +72,9 @@ public class Haupt {
 		else if (eingabe.equalsIgnoreCase("b")) {
 			Zerfallsprozesse.zerfall();
 		}
+		else if (eingabe.equalsIgnoreCase("x")) {
+			AMK();
+		}
 		else if (eingabe.equalsIgnoreCase("z")) {
 			System.out.println("Das Programm wurde beendet! ");
 		}
@@ -81,7 +85,7 @@ public class Haupt {
 	}
 
 
-	private static void quadratischerGleichunge() throws IOException {
+/*	private static void quadratischerGleichunge() throws IOException {
 		System.out.println(" ");
 		System.out.println(" =================================================");
 		System.out.println("||						 ||");
@@ -90,7 +94,7 @@ public class Haupt {
 
 
 	}
-
+*/
 
 	private static void StatistischeAuswertungen() throws IOException, InterruptedException {
 
@@ -110,6 +114,7 @@ public class Haupt {
 		System.out.println("||[G] Für Varianz				 ||");
 		System.out.println("||[H] Für Standardabweichung			 ||");
 		System.out.println("||[Z] Für Benden				 ||");
+		System.out.println("||[X] Für Zurück				 ||");
 		System.out.println("||						 ||");
 		System.out.println(" =================================================");
 		System.out.println(" ");
@@ -144,6 +149,7 @@ public class Haupt {
 				double ergebnis = summe/eins;
 				String.format("%.3f", ergebnis);
 				System.out.println("Der Durschnitt beträgt " + ergebnis);
+				ende();
 			}
 
 		}
@@ -157,7 +163,7 @@ public class Haupt {
 			int ergbnis = AMK.spannweite(eins,zwei);
 
 			System.out.println("Die Spannweite von " + eins + " und " + zwei + " beträgt " + ergbnis);
-			AMK.weiter();
+			ende();
 		}
 		//1.3
 		else if (eingabeS.equalsIgnoreCase("C")) {
@@ -167,31 +173,32 @@ public class Haupt {
 				int zwei = eingabe();
 				double[] eingabe =AMK.arrErstellendouble(zwei);
 				double ergebnis= AMK.maxAbweichung(eingabe);
-				System.out.println("Die maximale Abweichung beträgt " + eingabe );
-
+				System.out.println("Die maximale Abweichung beträgt " + ergebnis );
+				ende();
 			}
 			else if (a.equalsIgnoreCase("maximale abweichung")) {
 				int zwei = eingabe();
 				double[] eingabe =AMK.arrErstellendouble(zwei);
 				double ergebnis = AMK.maxAbweichung(eingabe);
-				System.out.println("Die maximale Abweichung beträgt " + eingabe );
-
+				System.out.println("Die maximale Abweichung beträgt " + ergebnis );
+				ende();
 			}
 			else if (a.equalsIgnoreCase("min") || a.equalsIgnoreCase("minimale abweichung")) {
 				int zwei = eingabe();
 				double[] eingabe = AMK.arrErstellendouble(zwei);
-				double ergbnis = AMK.minAbweichung(eingabe); 
-				System.out.println("Die minimale Abweichung beträgt " + eingabe );
-
+				double ergebnis = AMK.minAbweichung(eingabe); 
+				System.out.println("Die minimale Abweichung beträgt " + ergebnis );
+				ende();
 			}
 			else if (a.equalsIgnoreCase("minimale")){
 				int zwei = eingabe();
 				double[] eingabe = AMK.arrErstellendouble(zwei);
 				double ergebiss = AMK.minAbweichung(eingabe);
-				System.out.println("Die minimale Abweichung beträgt " + eingabe );
+				System.out.println("Die minimale Abweichung beträgt " + ergebiss );
+				ende();
 			}
 			else {
-				System.out.println("Probieren sie es nochmal ");
+				System.out.println("Versuche es nochmal deine Auswahl an buchstaben siehst du hier [] drinnen ");
 				System.out.println("Sie werden wieder zur auswahl geschichkt");
 				StatistischeAuswertungen();
 				
@@ -208,6 +215,7 @@ public class Haupt {
 			System.out.println("||						 ||");
 			System.out.println("||[A] Für Arithmetisches mittel 		 ||");
 			System.out.println("||[B] Für Geometrisches mittel			 ||");
+			System.out.println("||[X] Für Zurük					 ||");
 			System.out.println("||[Z] Für Benden				 ||");
 			System.out.println("||						 ||");
 			System.out.println(" =================================================");
@@ -220,9 +228,13 @@ public class Haupt {
 				int[] anz = AMK.arrErstellenint(eins);
 				double ergebniss = AMK.mittelwert(anz);
 				System.out.println("Der arithmetisches mittel beträgt " + ergebniss);
+				ende();
 			}
 			else if (D.equalsIgnoreCase("b")) {
 
+			}
+			else if (D.equalsIgnoreCase("x")) {
+				StatistischeAuswertungen();
 			}
 			else if (D.equalsIgnoreCase("z")) {
 				System.out.println("programm wurde beendet! ");
@@ -230,7 +242,8 @@ public class Haupt {
 			}
 			else {
 				System.out.println("Versuche es nochmal deine Auswahl an buchstaben siehst du hier [] drinnen ");
-
+				System.out.println("Sie werden wieder zur auswahl geschichkt");
+				StatistischeAuswertungen();
 			}
 
 		}
@@ -240,24 +253,25 @@ public class Haupt {
 			double[] eins = AMK.arrErstellendouble(eingabe);
 			double ergbnis = AMK.Median(eins);
 			System.out.println(ergbnis);
+			ende();
 		}
 		//1.6
 		else if (eingabeS.equalsIgnoreCase("F")) {
 			int eins =eingabe();
 			double[] anz = AMK.arrErstellendouble(eins);
 			double ergebnis = AMK.Modalwert(anz);
-			System.out.println(ergebnis);
-
+			System.out.println("Der Modalwert ist " + ergebnis);
+			ende();
 		}
 		//1.7
 		else if (eingabeS.equalsIgnoreCase("G")) {
 			int eins = eingabe();
-
+			ende();
 		}
 		//1.8
 		else if (eingabeS.equalsIgnoreCase("H")) {
 			int eins =eingabe();
-			
+			ende();
 		}
 		//1.8
 		else if (eingabeS.equalsIgnoreCase("Z")) {
@@ -280,7 +294,7 @@ public class Haupt {
 	}
 
 
-	private static void Vektorrechnung() throws IOException {
+	private static void Vektorrechnung() throws IOException, InterruptedException {
 
 		System.out.println(" ");
 		System.out.println(" =================================================");
@@ -290,6 +304,7 @@ public class Haupt {
 		System.out.println("||[A]Multiplikation mit einer Zahl 		 ||");
 		System.out.println("||[B]Addition zweier Vektoren			 ||");
 		System.out.println("||[C]Multiplikation zweier Vektoren 		 ||");
+		System.out.println("||[X] Für Zurück				 ||");
 		System.out.println("||[Z] Für Benden				 ||");
 		System.out.println("||						 ||");
 		System.out.println(" =================================================");
@@ -305,6 +320,9 @@ public class Haupt {
 		else if (vek.equalsIgnoreCase("c")) {
 			AMK.MUltiplikationZweierVektoren();
 		}
+		else if (vek.equalsIgnoreCase("x")) {
+			AMK();
+		}
 		else if (vek.equalsIgnoreCase("z")) {
 			System.out.println("programm wurde beendet! ");
 		}
@@ -314,7 +332,7 @@ public class Haupt {
 		}
 	}
 
-	private static void Matrizenrechnung() throws IOException {
+	private static void Matrizenrechnung() throws IOException, InterruptedException {
 		System.out.println(" ");
 		System.out.println(" =================================================");
 		System.out.println("||						 ||");
@@ -323,6 +341,7 @@ public class Haupt {
 		System.out.println("||[A]Multiplikation mit einer Zahl		 ||");
 		System.out.println("||[B]Addition zweier Matrizen			 ||");
 		System.out.println("||[C]Multiplikation zweier Matrizen		 ||");
+		System.out.println("||[X] Für Zurück				 ||");
 		System.out.println("||[Z] Für Benden				 ||");
 		System.out.println("||						 ||");
 		System.out.println(" =================================================");
@@ -338,6 +357,9 @@ public class Haupt {
 		}
 		else if (mat.equalsIgnoreCase("C")) {
 			AMK.MUltiplikationZweierVektoren2D();
+		}
+		else if (mat.equalsIgnoreCase("x")) {
+			AMK();
 		}
 		else if (mat.equalsIgnoreCase("z")) {
 			System.out.println("programm wurde beendet! ");
